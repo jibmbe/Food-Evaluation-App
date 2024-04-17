@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant.name }} - Food Evaluation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .restaurant-info {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .map-container {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ff6347; /* Tomato Red */
+            font-size: 24px;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #ff6347; /* Tomato Red */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff4500; /* Orange Red */
+        }
+        .review-icon, .dish-icon {
+            margin-right: 10px;
+        }
+        .visit-btn {
+            background-color: #ff6347; /* Tomato Red */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        .visit-btn:hover {
+            background-color: #ff4500; /* Orange Red */
+        }
+        #search {
+            display: block; /* Show the search section */
+            margin-bottom: 40px;
+        }
+        #sub-pages {
+            margin-top: 40px;
+            border-top: 2px solid #ff6347; /* Tomato Red */
+            padding-top: 20px;
+        }
+        #sub-pages h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6347; /* Tomato Red */
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #sub-pages ul {
+            text-align: center;
+        }
+        #sub-pages ul li {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        #sub-pages ul li:last-child {
+            margin-right: 0;
+        }
+        #sub-pages ul li:hover {
+            color: #ff6347; /* Tomato Red */
+        }
+        footer {
+            text-align: center;
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            padding: 20px 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ restaurant.name }} - Your Culinary Adventure Awaits!</h1>
+        <p>Discover the flavors, share your thoughts, and embark on a journey of food evaluation.</p>
+    </header>
+
+    <main>
+        
+        <div class="restaurant-info">
+            <img src="https://www.tourismupdate.co.za/sites/default/files/images/article/201708/sarova-hotels-opens-new-property-kenya.jpg" alt="{{ restaurant.name }} Image" style="max-width: 100%; border-radius: 20px;">
+
+            <p>Indulge in a gastronomic journey at our restaurant. From mouth-watering appetizers to delectable main courses and heavenly desserts, we offer a diverse menu to tantalize your taste buds.</p>
+        
+            <div class="map-container">
+                <button class="visit-btn" onclick="toggleMap()">Visit</button>
+                <div class="map" id="map">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226576.72523047817!2d-0.24168178064054615!3d51.5285582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce2b475960%3A0x95f744857ed16b4b!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1626914131954!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        
+            <h2><i class="fas fa-star review-icon"></i> Reviews</h2>
+            <ul>
+            
+                {% for review in restaurant.reviews %}
+                    <li>{{ review.comment }}</li>
+                {% endfor %}
+            </ul>
+            
+            <h2><i class="fas fa-pen review-icon"></i> Add Your Review</h2>
+            <form action="{% url 'add_review' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="rating" placeholder="Your rating (1-5 stars)" required>
+                <textarea name="comment" placeholder="Your review" required></textarea>
+                <input type="hidden" name="restaurant_id" value="{{ restaurant.id }}">
+                <input type="submit" value="Submit Review">
+            </form>
+    
+            <h2><i class="fas fa-utensils dish-icon"></i> Top Dishes</h2>
+            <ul>
+    
+                {% if restaurant.dishes %}
+                
+                    {% for dish in restaurant.dishes.all %}
+                        <li>{{ dish.name }} - Price: Ksh{{ dish.price }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>No top dishes available</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        
+        <section id="search">
+            <h2>Search</h2>
+            <form action="#" method="get">
+                <input type="text" name="search" placeholder="Search for dishes...">
+                <input type="submit" value="Search">
+            </form>
+        </section>
+
+    
+        <section id="sub-pages">
+            <h2>Sub-pages</h2>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="about">About</a></li>
+                
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 {{ restaurant.name }}. All rights reserved.</p>
+    </footer>
+
+    
+    <script>
+        function toggleMap() {
+            var map = document.getElementById('map');
+            if (map.style.display === 'none') {
+                map.style.display = 'block';
+            } else {
+                map.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

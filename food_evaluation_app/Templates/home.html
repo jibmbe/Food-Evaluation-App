@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+        }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .about-link {
+            color: #fff;
+            text-decoration: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+        }
+        .about-link:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .top-restaurants {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .top-restaurants li {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .top-restaurants li:hover {
+            background-color: #d63b20; /* Darker shade of Tomato Red */
+        }
+        footer {
+            text-align: center;
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            padding: 20px 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 40px;
+        }
+        .our-story-section {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .our-story-section h2 {
+            color: #ff6347; /* Tomato Red */
+            margin-bottom: 20px;
+        }
+        .our-story-section p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .decorative-image {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .icon {
+            color: #ff6347; /* Tomato Red */
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Food Evaluation App</h1>
+        <p>Explore top restaurants and share your culinary experiences</p>
+        <a href="/restaurant/1/about" class="about-link">Our Story <i class="fas fa-book-open icon"></i></a>
+    </header>
+
+    <main>
+        <div class="top-restaurants">
+            <ul>
+                <li data-restaurant-id="1">Sarova</li>
+                <li data-restaurant-id="2">Hilton</li>
+            </ul>
+        </div>
+        <div class="our-story-section" id="our-story">
+            <h2>Our Journey</h2>
+            <p>Welcome to Food Evaluation App, where we embark on a culinary journey to discover the best dining experiences. Our mission is to connect food enthusiasts with top restaurants, allowing them to share their thoughts and recommendations.</p>
+            <p>With a passion for great food and a commitment to excellence, we strive to make every meal memorable. Join us in exploring the diverse flavors and rich traditions of the culinary world.</p>
+            <p>Together, let's savor the moments and celebrate the art of dining!</p>
+            <img src="https://source.unsplash.com/800x600/?restaurant,food" alt="Restaurant" class="decorative-image">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Evaluation App. All rights reserved.</p>
+    </footer>
+
+    
+    <script>
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const restaurantItems = document.querySelectorAll(".top-restaurants li");
+            restaurantItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    const restaurantId = item.dataset.restaurantId;
+                    window.location.href = `/restaurant/${restaurantId}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

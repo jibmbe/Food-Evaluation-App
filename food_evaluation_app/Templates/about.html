@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant.name }} - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .about-section {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ff6347; /* Tomato Red */
+            font-size: 24px;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .fas {
+            color: #ff6347; /* Tomato Red */
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        .quote {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+        }
+        .highlight {
+            background-color: #ffedcc; /* Light Orange */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .feature-list {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .feature-list li::before {
+            content: "\2022";
+            color: #ff6347; /* Tomato Red */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .bg-image {
+            background-image: url('https://source.unsplash.com/800x600/?restaurant,food');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            height: 300px;
+        }
+        .bg-overlay {
+            background-color: rgba(255, 99, 71, 0.7); /* Tomato Red with opacity */
+            border-radius: 20px;
+            padding: 40px;
+            color: #fff;
+        }
+        .bg-overlay h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .bg-overlay p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .testimonial {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .testimonial h3 {
+            color: #ff6347; /* Tomato Red */
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .food-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .food-image {
+            width: calc(33.33% - 10px);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .food-image img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .food-image img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff;
+            padding: 20px 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ restaurant.name }} - A Culinary Journey</h1>
+        <p>Experience the art of cooking and the joy of eating</p>
+    </header>
+
+    <main>
+        
+        <div class="bg-image"></div>
+
+        
+        <div class="about-section">
+            <h2><i class="fas fa-utensils"></i> About Us</h2>
+            <p>Welcome to {{ restaurant.name }}, where food is not just a meal, but a journey of flavors and experiences. We take pride in offering a diverse menu crafted with passion and expertise, catering to every palate.</p>
+            <p>Our mission is to provide exceptional dining experiences that leave a lasting impression. Whether you're a food enthusiast, a casual diner, or a connoisseur, our restaurant promises to tantalize your taste buds and satisfy your cravings.</p>
+            <blockquote class="quote">"Good food is all the sweeter when shared with good friends."</blockquote>
+            <div class="highlight">
+                <p>Join us on this gastronomic adventure as we explore the art of cooking, the joy of eating, and the magic of food evaluation. Let your taste buds be the judge, and let your feedback shape the future of our culinary creations.</p>
+            </div>
+            <h3>Why Choose Us?</h3>
+            <ul class="feature-list">
+                <li>Exceptional dining experiences</li>
+                <li>Diverse and delicious menu options</li>
+                <li>Passionate and talented chefs</li>
+                <li>Community-focused atmosphere</li>
+                <li>Commitment to quality and innovation</li>
+            </ul>
+        </div>
+
+        
+        <div class="testimonial">
+            <h2>What Our Customers Say</h2>
+            <div class="quote">
+                <h3>Moniques</h3>
+                <p>"I've been dining at {{ restaurant.name }} for years, and every experience is better than the last. The food is always amazing, and the staff goes above and beyond to make you feel welcome."</p>
+            </div>
+        </div>
+
+    
+        <h2>Discover Our Delicious Creations</h2>
+        <div class="food-gallery">
+            <div class="food-image">
+                <img src="https://source.unsplash.com/400x400/?food,dish" alt="Food Image 1">
+            </div>
+            <div class="food-image">
+                <img src="https://source.unsplash.com/400x400/?meal,lunch" alt="Food Image 2">
+            </div>
+            <div class="food-image">
+                <img src="https://source.unsplash.com/400x400/?dinner,dish" alt="Food Image 3">
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 {{ restaurant.name }}. All rights reserved.</p>
+    </footer>
+</body>
+</html>
