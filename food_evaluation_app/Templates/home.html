@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Welcome to Food Evaluation App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -33,16 +33,20 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        .about-link {
+        .about-link, .appointment-link {
             color: #fff;
             text-decoration: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 0 10px;
+            background-color: #ff6347; /* Tomato Red */
+            transition: background-color 0.3s ease;
         }
-        .about-link:hover {
-            text-decoration: underline;
+        .about-link:hover, .appointment-link:hover {
+            background-color: #d63b20; /* Darker shade of Tomato Red */
+        }
+        .icon {
+            margin-right: 5px;
         }
         main {
             max-width: 800px;
@@ -95,10 +99,29 @@
             border-radius: 20px;
             margin-bottom: 20px;
         }
-        .icon {
-            color: #ff6347; /* Tomato Red */
-            font-size: 24px;
-            margin-right: 10px;
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+            header p {
+                font-size: 16px;
+            }
+            .about-link, .appointment-link {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .top-restaurants li {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .our-story-section h2 {
+                font-size: 24px;
+            }
+            .our-story-section p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -107,6 +130,7 @@
         <h1>Welcome to Food Evaluation App</h1>
         <p>Explore top restaurants and share your culinary experiences</p>
         <a href="/restaurant/1/about" class="about-link">Our Story <i class="fas fa-book-open icon"></i></a>
+        <a href="/restaurant/1/schedule" class="appointment-link">Book Appointment <i class="fas fa-calendar-plus icon"></i></a>
     </header>
 
     <main>

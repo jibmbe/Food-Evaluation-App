@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White */
+            color: #333; /* Dark Gray */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ff6347; /* Tomato Red */
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #fff; /* White */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #fff; /* White */
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .icon {
+            color: #fff; /* White */
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #fff; /* White */
+            color: #ff6347; /* Tomato Red */
+            border: 2px solid #fff; /* White */
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ff6347; /* Tomato Red */
+            color: #fff; /* White */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-check-circle icon"></i>
+        <h1>Appointment Confirmed</h1>
+        <p>Your appointment at {{ restaurant.name }} has been successfully scheduled.</p>
+        <a href="{% url 'home' %}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

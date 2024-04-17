@@ -28,3 +28,14 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.rating} Star Review for {self.dish.name} by {self.user.username}"
+    
+class Appointment(models.Model):
+    date = models.DateField()
+    time = models.TimeField()
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    number_of_guests = models.IntegerField()  
+    special_requests = models.TextField()     
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Appointment at {self.restaurant} on {self.date} at {self.time}"
